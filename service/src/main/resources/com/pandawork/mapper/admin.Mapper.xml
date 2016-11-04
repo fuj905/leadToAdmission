@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pandawork.mapper.AdminMapper">
+
+    <insert id="newNotice">
+        INSERT INTO
+        `t_notice`
+        (`title`, `author`, `content`,`type`,`organization`)
+        VALUES(
+        #{notice.title}, #{notice.author}, #{notice.content},
+        #{notice.type}, #{notice.organization}
+        )
+    </insert>
+
+    <delete id="delNoticeById">
+        DELETE FROM
+        `t_notice`
+        WHERE `id` = #{id}
+    </delete>
+
+    <update id="updateNoticeById">
+        UPDATE `t_notice`
+        SET
+        `title` = #{notice.title},
+        `author` = #{notice.author},
+        `content` = #{notice.content},
+        `type` = #{notice.type},
+        `organization` = #{notice.organization}
+        WHERE `id` = #{notice.id}
+    </update>
+
+    <select id="listNoticeByOrganizationAndType" parameterType="Integer" resultMap="pw.Notice">
+        SELECT `id`,`title`
+        FROM `t_notice`
+        WHERE `type` = #{type} AND `organization` = #{organization}
+    </select>
+
+    <select id="queryNoticeById" parameterType="Integer" resultMap="pw.Notice">
+        SELECT *
+        FROM `t_notice`
+        WHERE `id` = #{id}
+    </select>
+
+
+</mapper>
