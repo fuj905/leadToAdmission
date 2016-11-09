@@ -13,27 +13,36 @@ import java.util.Date;
 @Table(name = "t_notice")
 @Entity
 public class Notice {
+
+    //公告表id
     @Id
     private Integer id;
 
+    //公告题目
     @Column(name = "title")
     private String title;
 
+    //公告作者
     @Column(name = "author")
     private String author;
 
+    //公告目录
     @Column(name = "content")
     private String content;
 
+    //公告分类（1—通知，2—新鲜事儿，3—活动专题）
     @Column(name = "type")
     private Integer type;
 
+    //公告隶属机构（0—学校，其他对应专业表）
     @Column(name = "organization")
     private Integer organization;
 
+    //创建时间
     @Column(name = "creat_time")
     private Date creatTime;
 
+    //最后修改时间
     @Column(name ="last_modified_time")
     private Date lastModifiedTime;
 

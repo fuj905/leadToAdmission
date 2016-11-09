@@ -14,21 +14,27 @@ import java.util.Date;
 @Entity
 public class Community {
 
+    //社团表id
     @Id
     private Integer id;
 
+    //组织id（0-学校性，其他为对应学院表中学院性质的）
     @Column(name = "organization_id")
     private Integer organizationId;
 
+    //社团名称
     @Column(name ="community_name")
     private String communityName;
 
+    //社团描述
     @Column(name ="community_description")
     private String communityDescription;
 
+    //创建时间
     @Column(name = "creat_time")
     private Date creatTime;
 
+    //最后修改时间
     @Column(name ="last_modified_time")
     private Date lastModifiedTime;
 

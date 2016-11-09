@@ -16,39 +16,51 @@ import java.util.Date;
 @Entity
 public class CollegeInfo {
 
+    //专业详情表id
     @Id
     private Integer id;
 
+    //学院id
     @Column(name = "college_id")
     private Integer collegeId;
 
+    //专业设置
     @Column(name = "major_set")
     private String majorSet;
 
+    //课程设置
     @Column(name = "lesson")
     private String lesson;
 
+    //社团设置
     @Column(name = "community_id")
     private Integer communityId;
 
+    //评奖评优情况
     @Column(name = "award")
     private String award;
 
+    //就业情况
     @Column(name = "employment")
     private String employment;
 
+    //师资力量
     @Column(name = "faculty")
     private String faculty;
 
+    //生源
     @Column(name = "pupil")
     private String pupil;
 
+    //公告id
     @Column(name = "notice")
     private Integer notice;
 
+    //创建时间
     @Column(name = "creat_time")
     private Date creatTime;
 
+    //最后修改时间
     @Column(name ="last_modified_time")
     private Date lastModifiedTime;
 
