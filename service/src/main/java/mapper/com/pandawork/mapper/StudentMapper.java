@@ -1,6 +1,7 @@
 package com.pandawork.mapper;
 
 import com.pandawork.common.entity.Notice;
+import com.pandawork.common.entity.School;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -34,7 +35,37 @@ public interface StudentMapper {
      * @return
      * @throws Exception
      */
-    public void querySchoolIntroduction(@Param("id") int id) throws Exception;
+    public String querySchoolIntroduction(@Param("id") int id) throws Exception;
 
+    /**
+     * 查询学校标识
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    public String querySchoolLogo(@Param("id") int id) throws Exception;
 
+    /**
+     * 查询学校定位
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    public String querySchoolPositioning(@Param("id") int id) throws Exception;
+
+    /**
+     * 查询机构设置
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    public String querySchoolInstitutions(@Param("id") int id) throws Exception;
+
+    /**
+     * 测试查询学校详情
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    public School querySchoolDetail(@Param("id") int id) throws Exception;
 }

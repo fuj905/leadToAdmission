@@ -63,12 +63,12 @@
                     <exclude>**/*.java</exclude>
                     <exclude>**/*.svn</exclude>
                 </excludes>
-                <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                    <include>**/*.tld</include>
-                </includes>
-                <filtering>true</filtering>
+                <!--<includes>-->
+                    <!--<include>**/*.properties</include>-->
+                    <!--<include>**/*.xml</include>-->
+                    <!--<include>**/*.tld</include>-->
+                <!--</includes>-->
+                <!--<filtering>true</filtering>-->
             </resource>
         </resources>
 

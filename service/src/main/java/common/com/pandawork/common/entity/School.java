@@ -46,7 +46,7 @@ public class School {
     private String beautifulScenery;
 
     //招生就业
-    private String admission;
+    private String admissions;
 
     //历史名人
     @Column(name = "historical_figures")
@@ -136,12 +136,12 @@ public class School {
         this.beautifulScenery = beautifulScenery;
     }
 
-    public String getAdmission() {
-        return admission;
+    public String getAdmissions() {
+        return admissions;
     }
 
-    public void setAdmission(String admission) {
-        this.admission = admission;
+    public void setAdmissions(String admission) {
+        this.admissions = admission;
     }
 
     public String getHistoricalFigures() {

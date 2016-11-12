@@ -18,7 +18,42 @@
 
     <select id="querySchoolIntroduction" parameterType="Integer" resultType="String">
         SELECT ts.introduction
-        FROM t_school ts
-        WHERE id = #{id}
+        FROM `t_school` ts
+        WHERE `id` = #{id}
+    </select>
+    
+    <select id="querySchoolLogo" parameterType="Integer" resultType="String">
+        SELECT ts.logo
+        FROM `t_school` ts
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="querySchoolPositioning" parameterType="Integer" resultType="String">
+        SELECT ts.positioning
+        FROM `t_school` ts
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="querySchoolInstitutions" parameterType="Integer" resultType="String">
+        SELECT ts.positioning
+        FROM `t_school` ts
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="querySchoolDetail" parameterType="Integer" resultMap="pw.School">
+        SELECT
+            ts.name,
+            ts.introduction,
+            ts.logo,
+            ts.positioning,
+            ts.institutions,
+            ts.alumni,
+            ts.college_situation AS collegeSituation,
+            ts.beautiful_scenery AS beautifulScenery,
+            ts.admissions,
+            ts.historical_figures AS historicalFigures,
+            ts.discipline_construction AS disciplineConstruction
+        FROM  `t_school` ts
+        WHERE `id` = #{id}
     </select>
 </mapper>
