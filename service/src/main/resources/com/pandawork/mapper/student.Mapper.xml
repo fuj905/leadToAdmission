@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pandawork.mapper.StudentMapper">
+
+    <select id="listNoticeByOrganizationAndType" parameterType="Integer" resultMap="pw.Notice">
+        SELECT `id`,`title`
+        FROM `t_notice`
+        WHERE `type` = #{type} AND `organization` = #{organization}
+    </select>
+
+    <select id="queryNoticeById" parameterType="Integer" resultMap="pw.Notice">
+        SELECT *
+        FROM `t_notice`
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="querySchoolIntroduction" parameterType="Integer" resultType="String">
+        SELECT ts.introduction
+        FROM t_school ts
+        WHERE id = #{id}
+    </select>
+</mapper>

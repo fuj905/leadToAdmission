@@ -7,18 +7,15 @@ import com.pandawork.test.AbstractTestCase;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collections;
-import java.util.List;
-
 
 /**
  * 管理员处理测试页
  * Created by fujia on 2016/10/25.
  */
 public class AdminServiceTest extends AbstractTestCase {
-
     @Autowired
     AdminService adminService;
+
 
     //测试增加一条公告
     @Test
@@ -54,20 +51,5 @@ public class AdminServiceTest extends AbstractTestCase {
         adminService.updateNoticeById(notice);
     }
 
-    //测试根据所属机构和类型查询公告列表
-    @Test
-    public void listNoticeByOrganizationAndType() throws SSException{
-        List<Notice> info = Collections.emptyList();
-        info = adminService.listNoticeByOrganizationAndType(1,1);
-        System.out.println("题目是：" + info);
-    }
 
-    //测试根据id查询公告详情
-    @Test
-    public void queryNoticeById() throws SSException{
-      //  System.out.println(adminService.queryNoticeById(5));
-        Notice notice = new Notice();
-        notice = adminService.queryNoticeById(5);
-        System.out.println(notice.getAuthor());
-    }
 }

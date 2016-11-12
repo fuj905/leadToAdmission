@@ -1,65 +1,40 @@
 package com.pandawork.mapper;
 
-import com.pandawork.common.entity.Student;
+import com.pandawork.common.entity.Notice;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
  * 学生信息管理mapper层
  * Created by fujia on 2016/3/28.
- *
- *
  */
 public interface StudentMapper {
 
     /**
-     * 查询所有学生列表
+     * 查询公告列表
+     * @param organization
+     * @param type
      * @return
      * @throws Exception
      */
-    public List<Student> listAll( ) throws Exception;
+    public List<Notice> listNoticeByOrganizationAndType(@Param("organization") int organization, @Param("type") int type) throws Exception;
 
     /**
-     * 查询所有记录数目
-     * @return
-     * @throws Exception
-     */
-    public Integer countAll() throws Exception;
-
-    /**
-     * 根据id查询信息
+     * 根据公告id查询公告详情
      * @param id
      * @return
      * @throws Exception
      */
-    public Student queryById(@Param("id") int id) throws Exception;
+    public Notice queryNoticeById(@Param("id") int id) throws Exception;
 
     /**
-     * 增加学生信息
-     * @param student
-     * @throws Exception
-     */
-    public void newStudent(@Param("student") Student student) throws Exception;
-
-    /**
-     * 更新学生信息
-     * @param student
-     * @throws Exception
-     */
-    public Student update(@Param("student") Student student) throws Exception;
-
-    /**
-     *删除学生信息
+     * 查询学校简介
      * @param id
-     * @throws Exception
-     */
-    public boolean delById(@Param("id") int id) throws Exception;
-
-    /**
-     * 根据性别查询学生
-     * @param student
      * @return
      * @throws Exception
      */
-    public Student queryByName(@Param("student") String student) throws Exception;
+    public void querySchoolIntroduction(@Param("id") int id) throws Exception;
+
+
 }

@@ -31,17 +31,7 @@
         WHERE `id` = #{notice.id}
     </update>
 
-    <select id="listNoticeByOrganizationAndType" parameterType="Integer" resultMap="pw.Notice">
-        SELECT `id`,`title`
-        FROM `t_notice`
-        WHERE `type` = #{type} AND `organization` = #{organization}
-    </select>
 
-    <select id="queryNoticeById" parameterType="Integer" resultMap="pw.Notice">
-        SELECT *
-        FROM `t_notice`
-        WHERE `id` = #{id}
-    </select>
 
 
 </mapper>

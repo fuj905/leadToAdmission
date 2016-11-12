@@ -3,8 +3,6 @@ package com.pandawork.mapper;
 import com.pandawork.common.entity.Notice;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 /**
  * 管理员处理mapper层
  * Created by fujia on 2016/10/25.
@@ -32,22 +30,7 @@ public interface AdminMapper {
      */
     public void updateNoticeById(@Param("notice") Notice notice) throws Exception;
 
-    /**
-     * 查询公告列表
-     * @param organization
-     * @param type
-     * @return
-     * @throws Exception
-     */
-    public List<Notice> listNoticeByOrganizationAndType(@Param("organization") int organization, @Param("type") int type) throws Exception;
 
-    /**
-     * 根据公告id查询公告详情
-     * @param id
-     * @return
-     * @throws Exception
-     */
-    public Notice queryNoticeById(@Param("id") int id) throws Exception;
 
 
 }

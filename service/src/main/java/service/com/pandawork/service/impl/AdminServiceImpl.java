@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 /**
  * Created by fujia on 2016/10/25.
  */
@@ -66,31 +64,5 @@ public class AdminServiceImpl implements AdminService {
 
     }
 
-    @Override
-    public List<Notice> listNoticeByOrganizationAndType(int organization, int type) throws SSException {
-        try{
-            if(Assert.lessOrEqualZero(organization) || Assert.lessOrEqualZero(type)){
-                return null;
-            }
-            else {
-                return adminMapper.listNoticeByOrganizationAndType(organization, type);
-            }
-        }catch (Exception e){
-            LogClerk.errLog.error(e);
-            throw SSException.get(NFException.SystemException,e);
-        }
-    }
 
-    @Override
-    public Notice queryNoticeById(int id) throws SSException {
-        if(Assert.lessOrEqualZero(id)){
-            return null;
-        }
-        try{
-            return adminMapper.queryNoticeById(id);
-        }catch (Exception e){
-            LogClerk.errLog.error(e);
-            throw SSException.get(NFException.SystemException,e);
-        }
-    }
 }
