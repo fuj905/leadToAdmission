@@ -40,7 +40,7 @@ public class AdminServiceTest extends AbstractTestCase {
     @Test
     public void updateNoticeById() throws SSException{
         Notice notice = new Notice();
-        notice.setId(5);
+        notice.setId(2);
         notice.setAuthor("zuozhe");
         notice.setContent("目录");
         notice.getId();
